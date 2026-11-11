@@ -1,15 +1,21 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
-from __future__ import annotations
-
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from Entity import Entity
+from code.Background import Background
+from code.Const import WINDOW_WIDTH
 
 
 class EntityFactory:
 
-    def get_entity(self, entity_type: str) -> -> Entity:
-        pass
+    @staticmethod
+    def get_entity(entity_name: str):
+        match entity_name:
+            case 'Level1Bg':
+                list_bg = []
+                for i in range(7):
+                    list_bg.append(Background(f'Level1Bg{i}', (0, 0)))
+                    list_bg.append(Background(f'Level1Bg{i}', (WINDOW_WIDTH, 0)))
+                return list_bg
+        return None
+
+
+
