@@ -14,5 +14,5 @@ class Entity(ABC):
         self.speed = 0
 
     @abstractmethod
-    def move(self):
+    def move(self, ):
         pass
